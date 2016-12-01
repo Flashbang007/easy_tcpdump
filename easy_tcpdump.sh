@@ -9,6 +9,11 @@ TCPDUMP=/usr/sbin/tcpdump
  if [ "$(id -u)" != "0" ]; then
 
         echo "Skript wird als root ausgeführt" 1>&2
+        if [[ -f ~/bin/easy_tcpdump.sh ]]
+then
+   sudo mv ~/bin/easy_tcpdump.sh /usr/local/bin/
+fi
+
         sudo /usr/local/bin/easy_tcpdump.sh
 
 exit 1
